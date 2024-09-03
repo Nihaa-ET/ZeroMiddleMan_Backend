@@ -1,5 +1,5 @@
 const allowedOrigins =[
-    'https://directories.zeromiddleman.com',
+    'https://directories.zeromiddleman.com'
     // 'http://localhost:3000 ',
   ]
 
