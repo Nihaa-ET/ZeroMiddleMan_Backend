@@ -2,12 +2,14 @@ const allowedOrigins = require('./allowedOrigins');
 
 const corsOptions = {
     origin: (origin, callback) => {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    console.log('Origin:', origin); // Add this line for debugging
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        callback(null, true);
+    } else {
+        console.log('Blocked by CORS:', origin); // Add this line for debugging
+        callback(new Error('Not allowed by CORS'));
+    }
+},
 
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
